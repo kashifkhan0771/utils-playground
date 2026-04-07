@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Gophers | Go Utils Playground</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/gophers.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="./" class="logo">
+        <img src="https://go.dev/blog/gopher/header.jpg" alt="" class="logo-gopher">
+        Go Utils Playground
+      </a>
+      <ul class="nav-links">
+        <li><a href="./">Home</a></li>
+        <li><a href="playground/strings.html">Strings</a></li>
+        <li><a href="gophers.html">Gophers</a></li>
+        <li>
+          <a href="https://github.com/kashifkhan0771/utils" target="_blank" class="github-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- Hero -->
+    <section class="gophers-hero fade-in">
+      <img src="https://go.dev/blog/gopher/gopher.png" alt="Go Gopher" class="gopher-img">
+      <h1>The <span class="highlight">Gophers</span></h1>
+      <p class="hero-tagline">Every line of code in Go Utils was shaped by a real human being.<br>These are the builders behind the library.</p>
+    </section>
+
+    <!-- Top Gophers Bar Chart -->
+    <section class="top-gophers fade-in-up">
+      <h2>Top Gophers</h2>
+      <p class="section-subtitle">Ranked by contributions. Small PRs build great libraries.</p>
+      <div class="bar-chart" id="bar-chart">
+        <p class="loading-text">Loading contributors...</p>
+      </div>
+    </section>
+
+    <!-- All Gophers Grid -->
+    <section class="all-gophers">
+      <h2 class="fade-in">All Gophers</h2>
+      <p class="section-subtitle fade-in"><span id="gopher-count">--</span> humans. Countless commits. One mission: make Go better for everyone.</p>
+      <div class="gopher-grid" id="gopher-grid">
+        <p class="loading-text">Loading contributors...</p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="gophers-cta fade-in-up">
+      <div class="cta-box">
+        <h2>Your name could be here.</h2>
+        <p>Go Utils is built by the community, for the community. Whether it's a new utility function, a bug fix, a test, or even a typo fix in the docs &mdash; every contribution matters. The best open source projects aren't built by one person. They're built by people like you who show up and ship.</p>
+        <p class="cta-emphasis">One PR is all it takes to become a Gopher.</p>
+        <a href="https://github.com/kashifkhan0771/utils" target="_blank" class="cta-btn">
+          <svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          Start Contributing
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Go Utils Playground &middot; Interactive demos for <a href="https://github.com/kashifkhan0771/utils" target="_blank">kashifkhan0771/utils</a></p>
+    </div>
+  </footer>
+
+  <script type="module" src="js/gophers.js"></script>
+</body>
+</html>

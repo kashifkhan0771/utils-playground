@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Strings | Go Utils Playground</title>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="container">
+      <a href="../" class="logo">
+        <img src="https://go.dev/blog/gopher/header.jpg" alt="" class="logo-gopher">
+        Go Utils Playground
+      </a>
+      <ul class="nav-links">
+        <li><a href="../">Home</a></li>
+        <li><a href="strings.html">Strings</a></li>
+        <li><a href="../gophers.html">Gophers</a></li>
+        <li>
+          <a href="https://github.com/kashifkhan0771/utils" target="_blank" class="github-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            GitHub
+          </a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h1 class="fade-in">Strings</h1>
+
+    <!-- Reverse -->
+    <div class="util-card stagger" id="card-reverse">
+      <div class="util-card-header" onclick="toggleCard('card-reverse')">
+        <div class="util-card-header-left">
+          <h3>Reverse</h3>
+          <p>Reverse any string with full Unicode support. "hello" becomes "olleh".</p>
+        </div>
+        <svg class="util-card-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="util-card-body">
+        <div class="go-signature">func Reverse(input string) string</div>
+        <label for="reverse-input">Input</label>
+        <input type="text" id="reverse-input" placeholder="hello world">
+        <div class="btn-row">
+          <button onclick="runReverse()">Run</button>
+        </div>
+        <div class="output" id="reverse-output"></div>
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="util-card stagger" id="card-title">
+      <div class="util-card-header" onclick="toggleCard('card-title')">
+        <div class="util-card-header-left">
+          <h3>Title</h3>
+          <p>Convert a string to title case using English language rules.</p>
+        </div>
+        <svg class="util-card-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="util-card-body">
+        <div class="go-signature">func Title(input string) string</div>
+        <label for="title-input">Input</label>
+        <input type="text" id="title-input" placeholder="hello world from go">
+        <div class="btn-row">
+          <button onclick="runTitle()">Run</button>
+        </div>
+        <div class="output" id="title-output"></div>
+      </div>
+    </div>
+
+    <!-- ROT13 -->
+    <div class="util-card stagger" id="card-rot13">
+      <div class="util-card-header" onclick="toggleCard('card-rot13')">
+        <div class="util-card-header-left">
+          <h3>ROT13 Encode / Decode</h3>
+          <p>Apply ROT13 cipher — each letter shifts 13 positions. Apply twice to get original.</p>
+        </div>
+        <svg class="util-card-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="util-card-body">
+        <div class="go-signature">func Rot13Encode(input string) string</div>
+        <label for="rot13-input">Input</label>
+        <input type="text" id="rot13-input" placeholder="Hello World">
+        <div class="btn-row">
+          <button onclick="runRot13()">Encode / Decode</button>
+        </div>
+        <div class="output" id="rot13-output"></div>
+      </div>
+    </div>
+
+    <!-- Caesar Cipher -->
+    <div class="util-card stagger" id="card-caesar">
+      <div class="util-card-header" onclick="toggleCard('card-caesar')">
+        <div class="util-card-header-left">
+          <h3>Caesar Cipher</h3>
+          <p>Encrypt or decrypt text with a configurable letter shift value.</p>
+        </div>
+        <svg class="util-card-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="util-card-body">
+        <div class="go-signature">func CaesarEncrypt(input string, shift int) string</div>
+        <label for="caesar-input">Input</label>
+        <input type="text" id="caesar-input" placeholder="Hello World">
+        <label for="caesar-shift">Shift</label>
+        <input type="number" id="caesar-shift" value="3" min="1" max="25">
+        <div class="btn-row">
+          <button onclick="runCaesarEncrypt()">Encrypt</button>
+          <button class="btn-secondary" onclick="runCaesarDecrypt()">Decrypt</button>
+        </div>
+        <div class="output" id="caesar-output"></div>
+      </div>
+    </div>
+
+    <!-- Truncate -->
+    <div class="util-card stagger" id="card-truncate">
+      <div class="util-card-header" onclick="toggleCard('card-truncate')">
+        <div class="util-card-header-left">
+          <h3>Truncate</h3>
+          <p>Shorten a string to a max length with a customizable omission suffix.</p>
+        </div>
+        <svg class="util-card-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="util-card-body">
+        <div class="go-signature">func Truncate(input string, opts *TruncateOptions) string</div>
+        <label for="truncate-input">Input</label>
+        <input type="text" id="truncate-input" placeholder="This is a very long string that needs truncating">
+        <label for="truncate-length">Max Length</label>
+        <input type="number" id="truncate-length" value="12" min="1">
+        <label for="truncate-omission">Omission</label>
+        <input type="text" id="truncate-omission" value="...">
+        <div class="btn-row">
+          <button onclick="runTruncate()">Run</button>
+        </div>
+        <div class="output" id="truncate-output"></div>
+      </div>
+    </div>
+
+    <!-- IsValidEmail -->
+    <div class="util-card stagger" id="card-email">
+      <div class="util-card-header" onclick="toggleCard('card-email')">
+        <div class="util-card-header-left">
+          <h3>IsValidEmail</h3>
+          <p>Validate whether a string is a properly formatted email address.</p>
+        </div>
+        <svg class="util-card-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="util-card-body">
+        <div class="go-signature">func IsValidEmail(email string) bool</div>
+        <label for="email-input">Email</label>
+        <input type="text" id="email-input" placeholder="user@example.com">
+        <div class="btn-row">
+          <button onclick="runIsValidEmail()">Validate</button>
+        </div>
+        <div class="output" id="email-output"></div>
+      </div>
+    </div>
+
+    <!-- Run-Length Encoding -->
+    <div class="util-card stagger" id="card-rle">
+      <div class="util-card-header" onclick="toggleCard('card-rle')">
+        <div class="util-card-header-left">
+          <h3>Run-Length Encoding</h3>
+          <p>Compress repeated characters. "aaabbb" becomes "a3b3". Returns original if no savings.</p>
+        </div>
+        <svg class="util-card-chevron" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd"/></svg>
+      </div>
+      <div class="util-card-body">
+        <div class="go-signature">func RunLengthEncode(input string) string</div>
+        <label for="rle-input">Input</label>
+        <input type="text" id="rle-input" placeholder="aaabbbccc">
+        <div class="btn-row">
+          <button onclick="runRLEEncode()">Encode</button>
+          <button class="btn-secondary" onclick="runRLEDecode()">Decode</button>
+        </div>
+        <div class="output" id="rle-output"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Go Utils Playground &middot; Interactive demos for <a href="https://github.com/kashifkhan0771/utils" target="_blank">kashifkhan0771/utils</a></p>
+    </div>
+  </footer>
+
+  <script src="../js/wasm_exec.js"></script>
+  <script type="module" src="../js/strings.js"></script>
+</body>
+</html>

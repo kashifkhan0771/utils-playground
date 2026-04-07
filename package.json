@@ -1,0 +1,18 @@
+{
+  "name": "utils-playground",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive playground for Go Utils library — powered by WebAssembly",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -f docs/js/main.js docs/js/strings.js docs/js/home.js docs/js/gophers.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kashifkhan0771/utils-playground.git"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^6.0.2"
+  }
+}
