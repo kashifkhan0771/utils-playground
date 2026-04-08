@@ -56,7 +56,3 @@ make serve
 ## Deployment
 
 Deploys automatically to GitHub Pages via GitHub Actions on every push to `main`.
-
-## License
-
-ISC
