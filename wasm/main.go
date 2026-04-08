@@ -3,8 +3,11 @@
 package main
 
 import (
+	"strconv"
+	"strings"
 	"syscall/js"
 
+	utilslice "github.com/kashifkhan0771/utils/slice"
 	utilstrings "github.com/kashifkhan0771/utils/strings"
 )
 
@@ -21,6 +24,10 @@ func main() {
 	js.Global().Set("goIsValidEmail", js.FuncOf(isValidEmail))
 	js.Global().Set("goRunLengthEncode", js.FuncOf(runLengthEncode))
 	js.Global().Set("goRunLengthDecode", js.FuncOf(runLengthDecode))
+
+	// Register all slice utility functions
+	js.Global().Set("goRemoveDuplicateStr", js.FuncOf(removeDuplicateStr))
+	js.Global().Set("goRemoveDuplicateInt", js.FuncOf(removeDuplicateInt))
 
 	// Signal that WASM is ready
 	js.Global().Set("wasmReady", js.ValueOf(true))
@@ -97,4 +104,40 @@ func runLengthDecode(_ js.Value, args []js.Value) any {
 		return "Error: " + err.Error()
 	}
 	return decoded
+}
+
+func removeDuplicateStr(_ js.Value, args []js.Value) any {
+	if len(args) < 1 {
+		return "[]"
+	}
+	input := args[0].String()
+	parts := strings.Split(input, ",")
+	for i := range parts {
+		parts[i] = strings.TrimSpace(parts[i])
+	}
+	result := utilslice.RemoveDuplicateStr(parts)
+	// Format output as JSON array
+	return "[" + strings.Join(result, ", ") + "]"
+}
+
+func removeDuplicateInt(_ js.Value, args []js.Value) any {
+	if len(args) < 1 {
+		return "[]"
+	}
+	input := args[0].String()
+	parts := strings.Split(input, ",")
+	var nums []int
+	for _, p := range parts {
+		p = strings.TrimSpace(p)
+		if num, err := strconv.Atoi(p); err == nil {
+			nums = append(nums, num)
+		}
+	}
+	result := utilslice.RemoveDuplicateInt(nums)
+	// Format output as JSON array
+	strs := make([]string, len(result))
+	for i, num := range result {
+		strs[i] = strconv.Itoa(num)
+	}
+	return "[" + strings.Join(strs, ", ") + "]"
 }
